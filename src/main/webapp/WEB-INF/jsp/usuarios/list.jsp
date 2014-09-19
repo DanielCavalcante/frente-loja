@@ -1,5 +1,4 @@
 <div class="row">
-	
 	<table class="table table-hover table-striped">
 		<thead>
 			<tr class="">
