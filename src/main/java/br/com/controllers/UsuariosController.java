@@ -21,6 +21,7 @@ public class UsuariosController extends GenericController {
 	@Path("")
 	public List<Usuario> list() {
 		List<Usuario> list = (List<Usuario>) repository.list();
+		result.include("usuarioList", list);
 		return list;
 	}
 	
@@ -32,6 +33,21 @@ public class UsuariosController extends GenericController {
 	public void save(Usuario usuario) {
 		usuario = repository.save(usuario);
 		result.redirectTo(this).list();
+	}
+	
+	@Path("/delete/{id}")
+	public void delete(Long id) {
+		repository.delete(id);
+		result.redirectTo(this).list();
+	}
+	
+	@Path("/edit/{id}")
+	public void edit(Long id) {
+		Usuario usuario = null;
+		if (id != null) {
+			usuario = repository.find(id);
+			result.include("usuario", usuario);
+		}
 	}
 	
 }

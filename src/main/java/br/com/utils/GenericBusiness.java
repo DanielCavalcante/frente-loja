@@ -33,7 +33,6 @@ public abstract class GenericBusiness<T extends AbstractEntity> implements
 
 		@SuppressWarnings("unchecked")
 		Collection<T> list = query.getResultList();
-
 		return list;
 	}
 
