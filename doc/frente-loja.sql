@@ -15,3 +15,10 @@ create table cliente (
 	tipo_pessoa text,
 	constraint pk_cliente primary key (id)
 );
+
+create table categoria (
+	id bigserial,
+	nome text not null,
+	descricao text,
+	constraint pk_categoria primary key (id)
+);

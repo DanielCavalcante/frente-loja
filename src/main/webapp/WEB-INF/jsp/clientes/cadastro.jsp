@@ -2,29 +2,28 @@
 	<input type="hidden" name="cliente.id" value="${cliente.id}" />
 	
 	<div class="row">
-		<a href="<c:url value="/clientes" />">Voltar</a>
+		<a href="<c:url value="/clientes" />" class="btn btn-default">Voltar</a>
+		<button type="submit" class="btn btn-success">Salvar</button>
 	</div>
+	<div class="col-md-5 row">
+		<label>Nome</label>
+		<input type="text" name="cliente.nome" value="${cliente.nome}" class="form-control"/>
 	
-	<div class="row">
-		<label>Nome:</label>
-		<input type="text" name="cliente.nome" value="${cliente.nome}" />
-	
-		<label>CPF:</label>
-		<input type="text" name="cliente.cpf" value="${cliente.cpf}" />
+		<label>CPF</label>
+		<input type="text" name="cliente.cpf" value="${cliente.cpf}" class="form-control"/>
 		
-		<label>Email:</label>
-		<input type="text" name="cliente.email" value="${cliente.email}" />
+		<label>Email</label>
+		<input type="text" name="cliente.email" value="${cliente.email}" class="form-control"/>
 		
-		<label>Telefone:</label>
-		<input type="text" name="cliente.telefone" value="${cliente.telefone}" />
+		<label>Telefone</label>
+		<input type="text" name="cliente.telefone" value="${cliente.telefone}" class="form-control"/>
 	
-		<label>Tipo pessoa:</label>
-		<select name="cliente.tipoPessoa">
+		<label>Tipo pessoa</label>
+		<select name="cliente.tipoPessoa" class="form-control">
 			<option value="">Selecione</option>
 			<c:forEach items="${tipoPessoa}" var="t">
 				<option value="${t}">${t}</option>
 			</c:forEach>
 		</select>
-		<button type="submit" class="btn btn-success">Cadastrar</button>
 	</div>
 </form>
