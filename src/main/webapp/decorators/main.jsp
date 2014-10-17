@@ -5,11 +5,14 @@
 		<meta charset="UTF-8">
 		<link href="${context}/css/bootstrap.min.css" rel="stylesheet">
 		<link href="${context}/css/bootstrap-theme.min.css" rel="stylesheet">
-		<title>Frente de Loja</title>
+		<title><fmt:message key="sistema.titulo" /></title>
 		<decorator:head/>
 	</head>
 	<body>
 		<div class="container">
+			<div id="menu">
+				<jsp:include page="menu.jsp"></jsp:include>
+			</div>
 			<div id="conteudo" class="conteudo">
 				<decorator:body/>
 			</div>

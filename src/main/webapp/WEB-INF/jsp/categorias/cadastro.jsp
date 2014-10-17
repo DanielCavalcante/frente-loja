@@ -5,11 +5,11 @@
 	</div>
 	<div class="row col-md-5">
 		<div class="form-group">
-			<label>Nome</label>
+			<label><fmt:message key="categoria.nome" /></label>
 			<input type="text" id="nome" name="categoria.nome" class="form-control"/>
 		</div>
 		<div class="form-group">
-			<label>Descricao</label>
+			<label><fmt:message key="categoria.descricao" /></label>
 			<input type="text" id="descricao" name="categoria.descricao" class="form-control"/>
 		</div>
 	</div>
