@@ -1,9 +1,6 @@
 <form>
-<div class="row">
-	<a href='<c:url value='/clientes/cadastro' />' class="btn btn-scccess">Cadastro</a>
-	<button onclick="del()" class="btn btn-danger">Excluir</button>
-</div>
-<div class="row">
+	<a href='<c:url value='/clientes/cadastro' />' class="btn btn-success"><fmt:message key="button.cadastro" /></a>
+	<button onclick="del()" class="btn btn-danger"><fmt:message key="button.excluir" /></button>
 	<table class="table table-hover">
 		<thead>
 			<tr>
@@ -34,7 +31,6 @@
 			</c:forEach>
 		</tbody>
 	</table>
-</div>
 </form>
 <script>
 function selectAll(checkbox, items) {

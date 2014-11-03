@@ -1,11 +1,9 @@
 function saveCategoria() {
-	
 	var categoria = {
 		'categoria.id' : document.getElementById('idCategoria').value,
 		'categoria.nome' : document.getElementById('nome').value,
 		'categoria.descricao' : document.getElementById('descricao').value
 	};
-	
 	$.post("http://localhost:8080/frente-loja/categorias/save", categoria, function(result) {
 		if (result) {
 			var categoria = result.categoria;
@@ -19,9 +17,9 @@ function saveCategoria() {
 		} else {
 			alert('deu merda');
 		}
+		limpaTela();
 	});
 }
-
 function del(id) {
 	$.post("http://localhost:8080/frente-loja/categorias/delete?id="+id)
 	.success(function(){
@@ -30,4 +28,8 @@ function del(id) {
 	.error(function(){
 		alert('Operação não realizada');
 	});
+}
+function limpaTela() {
+	$('#nome').val("");
+	$('#descricao').val("");
 }

@@ -35,6 +35,9 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 	
+	<welcome-file-list>
+		<welcome-file>/WEB-INF/jsp/login/login.jsp</welcome-file>
+	</welcome-file-list>
   
   <listener>
     <listener-class>org.jboss.weld.environment.servlet.Listener</listener-class>

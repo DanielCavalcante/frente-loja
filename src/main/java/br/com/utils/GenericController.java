@@ -11,5 +11,6 @@ public abstract class GenericController {
 	@Inject protected UsuarioSessao usuarioSessao;
 	@Inject protected Result result;
 	@Inject protected HttpServletRequest request;
+	@Inject protected Inbox inbox;
 
 }

@@ -14,6 +14,7 @@
 				<jsp:include page="menu.jsp"></jsp:include>
 			</div>
 			<div id="conteudo" class="conteudo">
+				<msg:messages />
 				<decorator:body/>
 			</div>
 			<script src="${context}/js/jquery-2.1.1.min.js"></script>

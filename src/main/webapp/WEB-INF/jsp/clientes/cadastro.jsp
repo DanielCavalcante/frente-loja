@@ -1,11 +1,11 @@
 <form class="form-horizontal" action="<c:url value="/clientes/save" />" method="post">
 	<input type="hidden" name="cliente.id" value="${cliente.id}" />
 	
-	<div class="row">
+	<div>
 		<a href="<c:url value="/clientes" />" class="btn btn-default">Voltar</a>
 		<button type="submit" class="btn btn-success">Salvar</button>
 	</div>
-	<div class="col-md-5 row">
+	<div class="col-md-5">
 		<label>Nome</label>
 		<input type="text" name="cliente.nome" value="${cliente.nome}" class="form-control"/>
 	
