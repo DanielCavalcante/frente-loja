@@ -22,3 +22,10 @@ create table categoria (
 	descricao text,
 	constraint pk_categoria primary key (id)
 );
+
+create table perfil (
+	id bigserial not null,
+	nome text not null,
+	permissoes text not null,
+	constraint pk_perfil primary key (id)
+);

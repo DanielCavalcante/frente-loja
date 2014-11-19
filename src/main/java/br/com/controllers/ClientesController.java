@@ -21,7 +21,7 @@ public class ClientesController extends GenericController {
 	
 	@Get("/cadastro")
 	public void cadastro() {
-		result.include("tipoPessoa", TipoPessoa.values());
+		setDados();
 	}
 
 	@Post("/save")
@@ -60,4 +60,17 @@ public class ClientesController extends GenericController {
 		result.redirectTo(this).list();
 	}
 	
+	@Path("/edit/{id}")
+	public void edit(Long id) {
+		Cliente cliente = null;
+		if (id!= null) {
+			cliente = repository.find(id);
+			result.include("cliente", cliente);
+			setDados();
+		}
+	}
+
+	private void setDados() {
+		result.include("tipoPessoa", TipoPessoa.values());
+	}
 }

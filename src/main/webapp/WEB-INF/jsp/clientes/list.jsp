@@ -23,8 +23,8 @@
 					<td>${c.id}</td>
 					<td>${c.nome}</td>
 					<td>${c.cpf}</td>
-					<td>${c.telefone}</td>
 					<td>${c.email}</td>
+					<td>${c.telefone}</td>
 					<td>${c.tipoPessoa}</td>
 					<td><a href="<c:url value='/clientes/edit/${c.id}' />">Editar</a></td>
 				</tr>
