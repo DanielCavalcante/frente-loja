@@ -10,7 +10,9 @@ function saveCategoria() {
 			var conteudo = "<td>"+ categoria.id +"</td>";
 			conteudo += "<td>"+categoria.nome+"</td>";
 			conteudo += "<td>"+categoria.descricao+"</td>";
-			conteudo += "<td><a onclick='del("+categoria.id+")'>Excluir</a></td>";
+			conteudo += "<td><a onclick='del("+categoria.id+")'><button class='btn btn-danger btn-xs'>" +
+					"<span class='glyphicon glyphicon-trash' aria-hidden='true'>" +
+					"</span> Excluir</button></a></td>";
 			
 			var linha = "<tr id='registro_"+categoria.id+"'>"+ conteudo + "</tr>";
 			$('#tabela').append(linha);

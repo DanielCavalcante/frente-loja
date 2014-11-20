@@ -4,21 +4,26 @@
 	<head>
 		<meta charset="UTF-8">
 		<link href="${context}/css/bootstrap.min.css" rel="stylesheet">
-		<link href="${context}/css/bootstrap-theme.min.css" rel="stylesheet">
+<%-- 	<link href="${context}/css/bootstrap-theme.min.css" rel="stylesheet"> --%>
 		<title><fmt:message key="sistema.titulo" /></title>
 		<decorator:head/>
 	</head>
 	<body>
 		<div class="container">
-			<div id="menu">
-				<jsp:include page="menu.jsp"></jsp:include>
+			<div class="row">
+				<div id="menu" class="col-md-12">
+					<jsp:include page="menu.jsp"></jsp:include>
+				</div>
 			</div>
-			<div id="conteudo" class="conteudo">
-				<msg:messages />
-				<decorator:body/>
+			<div class="row">
+				<div id="conteudo" class="col-md-12">
+					<msg:messages />
+					<decorator:body/>
+				</div>
 			</div>
 			<script src="${context}/js/jquery-2.1.1.min.js"></script>
 			<script src="${context}/js/bootstrap.min.js"></script>
+			<script src="${context}/js/jquery.MaskInput.js"></script>
 			<c:forEach items="${jsImports}" var="js">
 				<script type="text/javascript" src="${context}/js/${js}"></script>
 			</c:forEach>
