@@ -9,7 +9,7 @@ public class IndexController extends GenericController {
 	
 	@Path("/index")
 	public void index() {
-		
+		//
 	}
 
 }
