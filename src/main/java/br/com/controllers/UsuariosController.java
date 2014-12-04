@@ -35,9 +35,20 @@ public class UsuariosController extends GenericController {
 		result.redirectTo(this).list();
 	}
 	
-	@Path("/delete/{id}")
-	public void delete(Long id) {
-		repository.delete(id);
+	@Path("/delete")
+	public void delete(Long[] id) {
+		try {
+			if (id == null || id.length == 0) {
+				inbox.message("msg.selecione.uma.opcao", "").danger();
+			} else {
+				for (Long i : id) {
+					repository.delete(i);
+				}
+				inbox.message("msg.registros.excluidos", "").success();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		result.redirectTo(this).list();
 	}
 	

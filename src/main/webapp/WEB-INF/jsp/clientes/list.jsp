@@ -1,18 +1,18 @@
 <form>
-<a href='<c:url value='/clientes/cadastro' />' class="btn btn-success"><fmt:message key="button.cadastro" /></a>
-<button onclick="del()" class="btn btn-danger"><fmt:message key="button.excluir" /></button>
+<a href="<c:url value='/clientes/cadastro' />" class="btn btn-success"><fmt:message key="button.cadastro" /></a>
+<a href="javascript:void(0)" onclick="del()" class="btn btn-danger"><fmt:message key="button.excluir" /></a>
 <table class="table table-hover">
 	<thead>
 		<tr>
 			<th style="width: 20px;">
 				<input type="checkbox" onclick="selectAll(this, 'id')" class="checkbox">
 			</th>
-			<th>Id</th>
-			<th>Nome</th>
-			<th>CPF</th>
-			<th>Email</th>
-			<th>Telefone</th>
-			<th>Tipo pessoa</th>
+			<th><fmt:message key="cliente.id" /></th>
+			<th><fmt:message key="cliente.nome" /></th>
+			<th><fmt:message key="cliente.cpf" /></th>
+			<th><fmt:message key="cliente.email" /></th>
+			<th><fmt:message key="cliente.telefone" /></th>
+			<th><fmt:message key="cliente.tipo.pessoa" /></th>
 			<th></th>
 		</tr>
 	</thead>
@@ -26,10 +26,9 @@
 				<td>${c.email}</td>
 				<td>${c.telefone}</td>
 				<td>${c.tipoPessoa}</td>
-				<td><a href="<c:url value='/clientes/edit/${c.id}' />">
-					<button class="btn btn-warning btn-xs">
-						<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Editar
-					</button></a>
+				<td><a href="<c:url value='/clientes/edit/${c.id}'  />" class="btn btn-warning btn-xs">
+						<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> <fmt:message key="button.editar" />
+					</a>
 				</td>
 			</tr>
 		</c:forEach>
@@ -46,5 +45,5 @@ function selectAll(checkbox, items) {
 function del() {
 	document.forms[0].action = "<c:url value='/clientes/delete'/>";
 	document.forms[0].submit();	
-} 
+}
 </script>

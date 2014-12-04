@@ -1,14 +1,14 @@
 <div class="row">
 	<div class="col-md-12">
-		<a href="<c:url value="/clientes" />">
-			<button class="btn btn-default"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Voltar</button>
+		<a href="<c:url value="/clientes"></c:url> ">
+			<button class="btn btn-default">
+				<span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> <fmt:message key="button.back" />
+			</button>
 		</a>
 	</div>
 </div>
-
 <div class="row">
 	<div class="col-md-6 col-md-offset-3">
-
 		<form role="form" action="<c:url value="/clientes/save" />" method="post">
 			<input type="hidden" name="cliente.id" value="${cliente.id}" />
 			<div class="form-group">
@@ -32,21 +32,18 @@
 				<select name="cliente.tipoPessoa" class="form-control">
 					<option value="">Selecione</option>
 					<c:forEach items="${tipoPessoa}" var="t">
-						<option value="${t}">${t}</option>
+						<option value="${t}" ${t eq cliente.tipoPessoa ? "selected" : ""}>${t}</option>
 					</c:forEach>
 				</select>
 			</div>
-			<button type="submit" class="btn btn-success">Salvar</button>
+			<button type="submit" class="btn btn-success"><fmt:message key="button.save" /></button>
 		</form>
 	
 	</div>
 </div>
-
 <script>
-
 	document.addEventListener("DOMContentLoaded", function(event) {
 		$(".cpf").mask("999.999.999-99");
 		$(".telefone").mask("(99) 9999-9999");
 	});
-
 </script>

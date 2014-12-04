@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="col-md-6 col-md-offset-3">
+	<div class="col-md-4 col-md-offset-3">
 		<form role="form" style="margin-bottom: 2em;">
 			<input type="hidden" id="idCategoria" name="categoria.id" value="${categoria.id}" />
 			<div class="form-group">
@@ -10,18 +10,18 @@
 				<label><fmt:message key="categoria.descricao" /></label>
 				<input type="text" id="descricao" name="categoria.descricao" class="form-control" placeholder='<fmt:message key="categoria.descricao" />'/>
 			</div>
-			<a href="javascript:void(0)" onclick="saveCategoria()" class="btn btn-success">Salvar</a>
+			<a href="javascript:void(0)" onclick="saveCategoria()" class="btn btn-success"><fmt:message key="button.save" /></a>
 		</form>
 	</div>
 </div>
 
 <div class="row">
-	<div class="col-md-12">
+	<div class="col-md-7 col-md-offset-2">
 		<table id="tabela" class="table table-hover">
 			<tr>
-				<th>Id</th>
-				<th>Nome</th>
-				<th>Descricao</th>
+				<th><fmt:message key="categoria.id" /></th>
+				<th><fmt:message key="categoria.nome" /></th>
+				<th><fmt:message key="categoria.descricao" /></th>
 				<th></th>
 			</tr>
 			<c:forEach items="${listCategorias}" var="c">
@@ -29,18 +29,13 @@
 				<td>${c.id}</td>
 				<td>${c.nome}</td>
 				<td>${c.descricao}</td>
-				<td><a href="javascript:void(0)" onclick="del(${c.id})">
-					<button class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Excluir</button>
-				</a></td>
-				
+				<td>
+					<a href="javascript:void(0)" onclick="del(${c.id})"><button class="btn btn-danger btn-xs">
+						<span class="glyphicon glyphicon-trash" aria-hidden="true"></span> <fmt:message key="button.excluir" /></button>
+					</a>
+				</td>
 			</tr>
 			</c:forEach>
-			
-			
-			
-			
-			
-			
 		</table>
 	</div>
 </div>

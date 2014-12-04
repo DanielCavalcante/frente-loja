@@ -47,12 +47,12 @@ public class ClientesController extends GenericController {
 	public void delete(Long[] id) {
 		try {
 			if (id == null || id.length == 0) {
-				inbox.message("Selecione pelo menos uma opcao", "").danger();
+				inbox.message("msg.selecione.uma.opcao", "").danger();
 			} else {
 				for (Long i : id) {
 					repository.delete(i);
 				}
-				inbox.message("Registro(s) excluidos com sucesso", "").success();
+				inbox.message("msg.registros.excluidos", "").success();
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
