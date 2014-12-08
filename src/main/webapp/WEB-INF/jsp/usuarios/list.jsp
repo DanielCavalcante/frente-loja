@@ -1,7 +1,9 @@
 <form>
 	<a href="<c:url value='/usuarios/cadastro' />" class="btn btn-success"><fmt:message key="button.cadastro" /></a>
 	<a href="javascript:void(0)" onclick="del()"><span class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> <fmt:message key="button.excluir" /></span></a>
-<table class="table table-hover table-condensed">
+
+<table id="clientes" class="table table-hover usuarios table-condensed" cellspacing="0" width="100%">
+
 	<thead>
 		<tr>
 			<th style="width: 20px;">
@@ -12,9 +14,22 @@
 			<th><fmt:message key="usuario.login" /></th>
 			<th><fmt:message key="usuario.senha" /></th>
 			<th></th>
-			<th></th>
 		</tr>
 	</thead>
+	
+	<tfoot>
+		<tr>
+			<th style="width: 20px;">
+				<input type="checkbox" onclick="selectAll(this, 'id')" class="checkbox">
+			</th>
+			<th><fmt:message key="usuario.id" /></th>
+			<th><fmt:message key="usuario.nome" /></th>
+			<th><fmt:message key="usuario.login" /></th>
+			<th><fmt:message key="usuario.senha" /></th>
+			<th></th>
+		</tr>
+	</tfoot>
+	
 	<tbody>
 		<c:forEach items="${usuarioList}" var="u">
 			<tr>
@@ -31,6 +46,7 @@
 			</tr>
 		</c:forEach>
 	</tbody>
+
 </table>
 </form>
 <script>

@@ -4,9 +4,21 @@
 	<head>
 		<meta charset="UTF-8">
 		<link href="${context}/css/bootstrap.min.css" rel="stylesheet">
+		<link href="${context}/css/bootstrapDataTables.css" rel="stylesheet">
 <%-- 	<link href="${context}/css/bootstrap-theme.min.css" rel="stylesheet"> --%>
 		<title><fmt:message key="sistema.titulo" /></title>
 		<decorator:head/>
+		<style type="text/css">
+			.dt-bootstrap {
+				margin-top: 30px;
+			}
+			.glyphicon-log-out {
+				color: #FF3A3A;
+			}
+			.glyphicon-user {
+				color: #1B8E2A;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="container">
@@ -23,7 +35,10 @@
 			</div>
 			<script src="${context}/js/jquery-2.1.1.min.js"></script>
 			<script src="${context}/js/bootstrap.min.js"></script>
+			<script src="${context}/js/dataTables.min.js"></script>
+			<script src="${context}/js/bootstrapDataTables.js"></script>
 			<script src="${context}/js/jquery.MaskInput.js"></script>
+			<script src="${context}/js/scripts.js"></script>
 			<c:forEach items="${jsImports}" var="js">
 				<script type="text/javascript" src="${context}/js/${js}"></script>
 			</c:forEach>

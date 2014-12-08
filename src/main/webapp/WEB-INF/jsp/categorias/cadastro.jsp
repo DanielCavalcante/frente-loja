@@ -8,7 +8,7 @@
 			</div>
 			<div class="form-group">
 				<label><fmt:message key="categoria.descricao" /></label>
-				<input type="text" id="descricao" name="categoria.descricao" class="form-control" placeholder='<fmt:message key="categoria.descricao" />'/>
+				<textarea id="descricao" name="categoria.descricao" class="form-control" placeholder='<fmt:message key="categoria.descricao" />' rows="3"></textarea>
 			</div>
 			<a href="javascript:void(0)" onclick="saveCategoria()" class="btn btn-success"><fmt:message key="button.save" /></a>
 		</form>

@@ -1,38 +1,55 @@
 <form>
 <a href="<c:url value='/clientes/cadastro' />" class="btn btn-success"><fmt:message key="button.cadastro" /></a>
 <a href="javascript:void(0)" onclick="del()" class="btn btn-danger"><fmt:message key="button.excluir" /></a>
-<table class="table table-hover">
-	<thead>
-		<tr>
-			<th style="width: 20px;">
-				<input type="checkbox" onclick="selectAll(this, 'id')" class="checkbox">
-			</th>
-			<th><fmt:message key="cliente.id" /></th>
-			<th><fmt:message key="cliente.nome" /></th>
-			<th><fmt:message key="cliente.cpf" /></th>
-			<th><fmt:message key="cliente.email" /></th>
-			<th><fmt:message key="cliente.telefone" /></th>
-			<th><fmt:message key="cliente.tipo.pessoa" /></th>
-			<th></th>
-		</tr>
-	</thead>
-	<tbody>
-		<c:forEach items="${clienteList}" var="c">
-			<tr>
-				<td><input type="checkbox" value="${c.id}" name="id"></td>
-				<td>${c.id}</td>
-				<td>${c.nome}</td>
-				<td>${c.cpf}</td>
-				<td>${c.email}</td>
-				<td>${c.telefone}</td>
-				<td>${c.tipoPessoa}</td>
-				<td><a href="<c:url value='/clientes/edit/${c.id}'  />" class="btn btn-warning btn-xs">
-						<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> <fmt:message key="button.editar" />
-					</a>
-				</td>
+
+<table id="clientes" class="table table-hover clientes table-condensed" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+				<th style="width: 20px;">
+					<input type="checkbox" onclick="selectAll(this, 'id')" class="checkbox">
+				</th>
+				<th><fmt:message key="cliente.id" /></th>
+				<th><fmt:message key="cliente.nome" /></th>
+				<th><fmt:message key="cliente.cpf" /></th>
+				<th><fmt:message key="cliente.email" /></th>
+				<th><fmt:message key="cliente.telefone" /></th>
+				<th><fmt:message key="cliente.tipo.pessoa" /></th>
+				<th></th>
 			</tr>
-		</c:forEach>
-	</tbody>
+        </thead>
+ 
+        <tfoot>
+            <tr>
+                <th style="width: 20px;">
+					<input type="checkbox" onclick="selectAll(this, 'id')" class="checkbox">
+				</th>
+				<th><fmt:message key="cliente.id" /></th>
+				<th><fmt:message key="cliente.nome" /></th>
+				<th><fmt:message key="cliente.cpf" /></th>
+				<th><fmt:message key="cliente.email" /></th>
+				<th><fmt:message key="cliente.telefone" /></th>
+				<th><fmt:message key="cliente.tipo.pessoa" /></th>
+				<th></th>
+            </tr>
+        </tfoot>
+ 
+        <tbody>
+            <c:forEach items="${clienteList}" var="c">
+				<tr>
+					<td><input type="checkbox" value="${c.id}" name="id"></td>
+					<td>${c.id}</td>
+					<td>${c.nome}</td>
+					<td>${c.cpf}</td>
+					<td>${c.email}</td>
+					<td>${c.telefone}</td>
+					<td>${c.tipoPessoa}</td>
+					<td><a href="<c:url value='/clientes/edit/${c.id}'  />" class="btn btn-warning btn-xs">
+							<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> <fmt:message key="button.editar" />
+						</a>
+					</td>
+				</tr>
+			</c:forEach>
+        </tbody>
 </table>
 </form>
 <script>
