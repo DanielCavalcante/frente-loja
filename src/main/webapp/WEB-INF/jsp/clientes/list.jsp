@@ -2,6 +2,10 @@
 <a href="<c:url value='/clientes/cadastro' />" class="btn btn-success"><fmt:message key="button.cadastro" /></a>
 <a href="javascript:void(0)" onclick="del()" class="btn btn-danger"><fmt:message key="button.excluir" /></a>
 
+<a href="<c:url value='/clientes/json' />" class="btn btn-info pull-right">
+	<span class="glyphicon glyphicon-export" aria-hidden="true"></span> <fmt:message key="button.jsonAll" />
+</a>
+
 <table id="clientes" class="table table-hover clientes table-condensed" cellspacing="0" width="100%">
         <thead>
             <tr>

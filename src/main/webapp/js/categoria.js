@@ -13,6 +13,11 @@ function saveCategoria() {
 			conteudo += "<td><a onclick='del("+categoria.id+")'><button class='btn btn-danger btn-xs'>" +
 					"<span class='glyphicon glyphicon-trash' aria-hidden='true'>" +
 					"</span> Excluir</button></a></td>";
+			conteudo += "<td>"+
+			"<a href='json/" + categoria.id + "' class='btn btn-info btn-xs'><span class='glyphicon glyphicon-export' aria-hidden='true'></span> " +
+			"JSON</a>"+
+			"</td>";
+			
 			
 			var linha = "<tr id='registro_"+categoria.id+"'>"+ conteudo + "</tr>";
 			$('#tabela').append(linha);

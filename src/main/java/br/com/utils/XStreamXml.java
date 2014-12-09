@@ -8,17 +8,17 @@ public class XStreamXml {
 	
 	private XStream xstream;
 	
-	public XStreamXml(){
+	public XStreamXml(String alias){
 		this.xstream = new XStream();
-		alias();
+		alias(alias);
 	}
 	
-	public void alias(){
-		this.xstream.alias("Usuario", Usuario.class);
+	public void alias(String alias){
+		this.xstream.alias(alias, Usuario.class);
 	}
 	
-	public String gerarXML(Usuario usuario){
-		return this.xstream.toXML(usuario);
+	public String gerarXML(Object objeto){
+		return this.xstream.toXML(objeto);
 	}
 
 }

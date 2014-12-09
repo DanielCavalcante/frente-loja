@@ -2,6 +2,12 @@
 	<a href="<c:url value='/usuarios/cadastro' />" class="btn btn-success"><fmt:message key="button.cadastro" /></a>
 	<a href="javascript:void(0)" onclick="del()"><span class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> <fmt:message key="button.excluir" /></span></a>
 
+
+<a href="<c:url value='/usuarios/xml' />" class="btn btn-info pull-right">
+	<span class="glyphicon glyphicon-export" aria-hidden="true"></span> <fmt:message key="button.xmlAll" />
+</a>
+
+
 <table id="clientes" class="table table-hover usuarios table-condensed" cellspacing="0" width="100%">
 
 	<thead>

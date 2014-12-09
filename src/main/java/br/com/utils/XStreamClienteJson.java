@@ -5,21 +5,21 @@ import br.com.models.Cliente;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.json.JsonHierarchicalStreamDriver;
 
-public class XStreamJson {
+public class XStreamClienteJson {
 	
 	private XStream xstream;
 	
-	public XStreamJson(){
+	public XStreamClienteJson(String alias){
 		this.xstream = new XStream(new JsonHierarchicalStreamDriver());
-		alias();
+		alias(alias);
 	}
 	
-	public void alias(){
-		this.xstream.alias("Cliente", Cliente.class);
+	public void alias(String alias){
+		this.xstream.alias(alias, Cliente.class);
 	}
 	
-	public String gerarJSON(Cliente cliente){
-		return this.xstream.toXML(cliente);
+	public String gerarJSON(Object objeto){
+		return this.xstream.toXML(objeto);
 	}
 
 }

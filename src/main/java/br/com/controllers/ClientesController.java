@@ -12,7 +12,7 @@ import br.com.models.Cliente;
 import br.com.repositories.ClienteRepository;
 import br.com.utils.GenericController;
 import br.com.utils.TipoPessoa;
-import br.com.utils.XStreamJson;
+import br.com.utils.XStreamClienteJson;
 
 @Controller
 @Path("/clientes")
@@ -76,10 +76,19 @@ public class ClientesController extends GenericController {
 		Cliente cliente = null;
 		if(id != null) {
 			cliente = repository.find(id);
-			XStreamJson xsj = new XStreamJson();
+			XStreamClienteJson xsj = new XStreamClienteJson("Cliente");
 			String jsonCliente = xsj.gerarJSON(cliente);
 			result.include("jsonCliente", jsonCliente);
 		}
+	}
+	
+	@Path("/json")
+	public void json() {
+		List<Cliente> list = (List<Cliente>) repository.list();
+		inbox.listaVazia(list);
+		XStreamClienteJson xsj = new XStreamClienteJson("Cliente");
+		String jsonClientes = xsj.gerarJSON(list);
+		result.include("jsonCliente", jsonClientes);
 	}
 
 	private void setDados() {

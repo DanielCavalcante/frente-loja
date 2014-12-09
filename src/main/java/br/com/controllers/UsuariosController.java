@@ -67,10 +67,20 @@ public class UsuariosController extends GenericController {
 		Usuario usuario = null;
 		if(id != null){
 			usuario = repository.find(id);
-			XStreamXml xsx = new XStreamXml();
+			XStreamXml xsx = new XStreamXml("Usuario");
 			String xmlUsuario = xsx.gerarXML(usuario);
 			result.include("xmlUsuario", xmlUsuario);
 		}
+	}
+	
+	@Path("/xml")
+	public void xml(){
+		
+		List<Usuario> usuario = (List<Usuario>)repository.list();
+		XStreamXml xsx = new XStreamXml("Usuario");
+		String xmlUsuario = xsx.gerarXML(usuario);
+		result.include("xmlUsuario", xmlUsuario);
+		
 	}
 	
 }

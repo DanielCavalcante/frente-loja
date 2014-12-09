@@ -12,6 +12,7 @@ import br.com.caelum.vraptor.view.Results;
 import br.com.models.Categoria;
 import br.com.repositories.CategoriaRepository;
 import br.com.utils.GenericController;
+import br.com.utils.XStreamCategoriaJson;
 
 @Controller
 @Path("/categorias")
@@ -34,6 +35,27 @@ public class CategoriasController extends GenericController {
 			e.printStackTrace();
 			result.use(Results.nothing());
 		}
+	}
+	
+	@Path("/json/{id}")
+	public void json(Long id){
+		Categoria categoria = null;
+		
+		if(id != null){
+			categoria = repository.find(id);
+			XStreamCategoriaJson xsj = new XStreamCategoriaJson("Categoria");
+			String jsonCategoria = xsj.gerarJSON(categoria);
+			result.include("jsonCategoria", jsonCategoria);
+		}
+	}
+
+	@Path("/json")
+	public void json(){
+		List<Categoria> list = (List<Categoria>) repository.list();
+		inbox.listaVazia(list);
+		XStreamCategoriaJson xsj = new XStreamCategoriaJson("Categoria");
+		String jsonCategorias = xsj.gerarJSON(list);
+		result.include("jsonCategoria", jsonCategorias);
 	}
 	
 	@Post("/delete")

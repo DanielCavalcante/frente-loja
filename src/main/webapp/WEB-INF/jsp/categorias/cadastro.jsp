@@ -1,4 +1,13 @@
 <div class="row">
+
+	<div class="col-md-12">
+		<a href="<c:url value='/categorias/json' />" class="btn btn-info pull-right">
+			<span class="glyphicon glyphicon-export" aria-hidden="true"></span> <fmt:message key="button.jsonAll" />
+		</a>
+	</div>
+
+</div>
+<div class="row">
 	<div class="col-md-4 col-md-offset-3">
 		<form role="form" style="margin-bottom: 2em;">
 			<input type="hidden" id="idCategoria" name="categoria.id" value="${categoria.id}" />
@@ -23,6 +32,7 @@
 				<th><fmt:message key="categoria.nome" /></th>
 				<th><fmt:message key="categoria.descricao" /></th>
 				<th></th>
+				<th></th>
 			</tr>
 			<c:forEach items="${listCategorias}" var="c">
 			<tr id="registro_${c.id}">
@@ -32,6 +42,11 @@
 				<td>
 					<a href="javascript:void(0)" onclick="del(${c.id})"><button class="btn btn-danger btn-xs">
 						<span class="glyphicon glyphicon-trash" aria-hidden="true"></span> <fmt:message key="button.excluir" /></button>
+					</a>
+				</td>
+				<td>
+					<a href="<c:url value='/categorias/json/${c.id}'  />" class="btn btn-info btn-xs">
+						<span class="glyphicon glyphicon-export" aria-hidden="true"></span> <fmt:message key="button.json" />
 					</a>
 				</td>
 			</tr>
