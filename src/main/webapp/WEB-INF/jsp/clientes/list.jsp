@@ -15,6 +15,7 @@
 				<th><fmt:message key="cliente.telefone" /></th>
 				<th><fmt:message key="cliente.tipo.pessoa" /></th>
 				<th></th>
+				<th></th>
 			</tr>
         </thead>
  
@@ -30,6 +31,7 @@
 				<th><fmt:message key="cliente.telefone" /></th>
 				<th><fmt:message key="cliente.tipo.pessoa" /></th>
 				<th></th>
+				<th></th>
             </tr>
         </tfoot>
  
@@ -43,7 +45,13 @@
 					<td>${c.email}</td>
 					<td>${c.telefone}</td>
 					<td>${c.tipoPessoa}</td>
-					<td><a href="<c:url value='/clientes/edit/${c.id}'  />" class="btn btn-warning btn-xs">
+					<td>
+						<a href="<c:url value='/clientes/json/${c.id}'  />" class="btn btn-info btn-xs">
+							<span class="glyphicon glyphicon-export" aria-hidden="true"></span> <fmt:message key="button.json" />
+						</a>
+					</td>
+					<td>
+						<a href="<c:url value='/clientes/edit/${c.id}'  />" class="btn btn-warning btn-xs">
 							<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> <fmt:message key="button.editar" />
 						</a>
 					</td>

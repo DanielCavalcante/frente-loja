@@ -14,6 +14,7 @@
 			<th><fmt:message key="usuario.login" /></th>
 			<th><fmt:message key="usuario.senha" /></th>
 			<th></th>
+			<th></th>
 		</tr>
 	</thead>
 	
@@ -27,6 +28,7 @@
 			<th><fmt:message key="usuario.login" /></th>
 			<th><fmt:message key="usuario.senha" /></th>
 			<th></th>
+			<th></th>
 		</tr>
 	</tfoot>
 	
@@ -38,6 +40,11 @@
 				<td>${u.nome}</td>
 				<td>${u.login}</td>
 				<td>${u.senha}</td>
+				<td>
+					<a href="<c:url value='/usuarios/xml/${u.id}'  />" class="btn btn-info btn-xs">
+						<span class="glyphicon glyphicon-export" aria-hidden="true"></span> <fmt:message key="button.xml" />
+					</a>
+				</td>
 				<td>
 					<a href="<c:url value='/usuarios/edit/${u.id}' />" class="btn btn-warning btn-xs">
 						<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> <fmt:message key="button.editar" />

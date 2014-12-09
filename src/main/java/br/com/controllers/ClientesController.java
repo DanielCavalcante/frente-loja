@@ -12,6 +12,7 @@ import br.com.models.Cliente;
 import br.com.repositories.ClienteRepository;
 import br.com.utils.GenericController;
 import br.com.utils.TipoPessoa;
+import br.com.utils.XStreamJson;
 
 @Controller
 @Path("/clientes")
@@ -67,6 +68,17 @@ public class ClientesController extends GenericController {
 			cliente = repository.find(id);
 			result.include("cliente", cliente);
 			setDados();
+		}
+	}
+	
+	@Path("/json/{id}")
+	public void json(Long id) {
+		Cliente cliente = null;
+		if(id != null) {
+			cliente = repository.find(id);
+			XStreamJson xsj = new XStreamJson();
+			String jsonCliente = xsj.gerarJSON(cliente);
+			result.include("jsonCliente", jsonCliente);
 		}
 	}
 

@@ -11,6 +11,7 @@ import br.com.caelum.vraptor.Post;
 import br.com.models.Usuario;
 import br.com.repositories.UsuarioRepository;
 import br.com.utils.GenericController;
+import br.com.utils.XStreamXml;
 
 @Controller
 @Path("/usuarios")
@@ -58,6 +59,17 @@ public class UsuariosController extends GenericController {
 		if (id != null) {
 			usuario = repository.find(id);
 			result.include("usuario", usuario);
+		}
+	}
+	
+	@Path("/xml/{id}")
+	public void xml(Long id){
+		Usuario usuario = null;
+		if(id != null){
+			usuario = repository.find(id);
+			XStreamXml xsx = new XStreamXml();
+			String xmlUsuario = xsx.gerarXML(usuario);
+			result.include("xmlUsuario", xmlUsuario);
 		}
 	}
 	
